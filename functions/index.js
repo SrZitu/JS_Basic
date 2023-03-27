@@ -24,21 +24,15 @@
 
 // Naming Practice
 // var _myName = "vinod";
-// var 1myName = "thapa";
+// var 1myName = "thapa"; //not valid variable name
 // var _1my__Name = "bahadur";
 // var $myName = "thapa technical";
-// var myNaem% = "thapa technical";
+// var myNaem% = "thapa technical"; //not valid variable name
 
 // console.log(myNaem%);
 
 
 
-// // **********************************************************************
-
-// // 👉 // 🤩 SUBSCRIBE TO THAPA TECHNICAL YOUTUBE CHANNEL 🤩
-//  👉 // 🤩  https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA
-
-// // **********************************************************************
 
 
 
@@ -54,7 +48,7 @@
 // var iAmThapas = false;
 // console.log(iAmThapas);
 
-// // typeof operator 
+// // // typeof operator 
 // console.log(typeof(iAmThapas));
 
 
@@ -62,9 +56,9 @@
 
 // console.log( 10 + "20");
 // 9 - "5"
-// console.log( 9 - "5"); //bug
+console.log( 9 - "5"); //bug
 // "Java" + "Script"
-// console.log( "Java "+ "Script");
+console.log( "Java "+ "Script");
 // " " + " "
 // console.log( " " + 0);
 // " " + 0
