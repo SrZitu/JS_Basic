@@ -3,8 +3,7 @@
 // You can create an object in JavaScript using two main syntaxes: object literal notation and constructor notation.
 
 // Object literal notation
-// Object literal notation is the simplest way to create an object in JavaScript.
-//It involves defining an object as a comma - separated list of name - value pairs enclosed in curly braces { }. Here's an example:
+// Object literal notation is the simplest way to create an object in JavaScript.It involves defining an object as a comma - separated list of name - value pairs enclosed in curly braces { }. Here's an example:
 
 
 // let person = {
@@ -17,8 +16,7 @@
 // };
 
 
-// In this example, we've defined an object called person with four properties: firstName, lastName, age, and sayHello. The sayHello property is a method 
-//that logs "Hello!" to the console.
+// In this example, we've defined an object called person with four properties: firstName, lastName, age, and sayHello. The sayHello property is a method that logs "Hello!" to the console.
 
 // You can access the properties and methods of an object using dot notation or bracket notation.Here are some examples:
 
@@ -29,8 +27,7 @@
 
 
 // Constructor notation
-// Constructor notation involves defining an object using a constructor function. 
-//A constructor function is a special function that is used to create and initialize an object.Here's an example:
+// Constructor notation involves defining an object using a constructor function. A constructor function is a special function that is used to create and initialize an object.Here's an example:
 
 
 // function Person(firstName, lastName, age) {
@@ -45,9 +42,7 @@
 // let person = new Person('John', 'Doe', 30);
 
 
-// In this example, we've defined a constructor function called Person that takes three arguments: firstName, lastName, and age. 
-//The function initializes the object using the this keyword, which refers to the object being created. 
-//We've also defined a sayHello method using the same syntax.
+// In this example, we've defined a constructor function called Person that takes three arguments: firstName, lastName, and age. The function initializes the object using the this keyword, which refers to the object being created. We've also defined a sayHello method using the same syntax.
 
 // To create a new object using the constructor function, we use the new keyword followed by the name of the constructor function and its arguments.In this case, we've created a new object called person.
 

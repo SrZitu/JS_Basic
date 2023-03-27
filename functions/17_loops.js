@@ -76,8 +76,7 @@ outerLoop: for (var i = 0; i < 10; i++) {
 }
 // In this example, the break outerLoop; statement will break out of both loops at once.
 
-// Use the Array.map() method to transform arrays: If you need to transform an array into a new array, you can use the map() method instead of a for loop.
-//This can make your code more concise and easier to read.For example:
+// Use the Array.map() method to transform arrays: If you need to transform an array into a new array, you can use the map() method instead of a for loop.This can make your code more concise and easier to read.For example:
 
 var numbers = [1, 2, 3, 4, 5];
 var doubledNumbers = numbers.map(function (number) {
