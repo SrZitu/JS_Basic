@@ -2,7 +2,8 @@
 
 // Function Declaration:
 
-// A function declaration is a way to define a function in JavaScript using the function keyword, followed by the function name, the parameter list, and the function body enclosed in curly braces.Here's an example:
+// A function declaration is a way to define a function in JavaScript using the function keyword,
+// followed by the function name, the parameter list, and the function body enclosed in curly braces.Here's an example:
 
 
 // function add(a, b) {

@@ -2,7 +2,9 @@
 
 //     var:
 
-// var was the original way to declare variables in JavaScript.It has a function scope, which means that the variable is accessible within the function it's declared in, or the global scope if it's declared outside of any function.
+// var was the original way to declare variables in JavaScript.It has a function scope, 
+//which means that the variable is accessible within the function it's declared in, 
+//or the global scope if it's declared outside of any function.
 
 
 // function example() {
@@ -19,7 +21,8 @@
 // x = 15; // Reassigning a variable with var is allowed
 // let:
 
-// let was introduced in ES6 as a new way to declare variables in JavaScript.It has a block scope, which means that the variable is accessible within the block it's declared in, including inner blocks.
+// let was introduced in ES6 as a new way to declare variables in JavaScript.
+//It has a block scope, which means that the variable is accessible within the block it's declared in, including inner blocks.
 
 
 // function example() {

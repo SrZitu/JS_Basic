@@ -25,16 +25,16 @@
 
 
 
-var result = 5*3 + 10 * 2 ; // result will be 25, not 30
-
+var result1 = 5*3 + 10 * 2 ; // result will be 35
+console.log(result1);
 
 // In this example, the multiplication operator (*) has higher precedence than the addition operator (+). So, 10 * 2 is evaluated first, resulting in 20. Then, the result of that operation is added to 5, resulting in 25.
 
 // You can use parentheses to change the order of evaluation in an expression:
 
 
-var result = (5 + 10) * 2; // result will be 30
-
+var result2 = (5 + 10) * 2; // result will be 30
+console.log(result2);
 // In this example, the addition operation is evaluated first because it is inside the parentheses. So, 5 + 10 results in 15. Then, the multiplication operator (*) is evaluated, resulting in 30.
 
 // I hope this explanation helps you understand operator precedence in JavaScript!
@@ -47,8 +47,8 @@ var result = (5 + 10) * 2; // result will be 30
 // Example 2: Logical AND and OR operators
 
 
-var result = true || false && true;
-console.log(result); // Output: true
+var result3 = true || false && true;
+console.log(result3); // Output: true
 
 // In this example, the logical AND operator && has a higher precedence than the logical OR operator ||.However, the logical AND operator && is evaluated first due to the use of parentheses.The expression false && true inside the parentheses evaluates to false, but the OR operator || considers true to be a "truthy" value and returns true without evaluating the expression after it.So, the final result is true.
 
@@ -63,6 +63,7 @@ console.log(result); // Output: 5
 
 // 1. What is the value of x after the following expression is evaluated?
 var x = 10 * 2 + 5 / 5 - 3;
+console.log(x); 
 // A. 18
 // B. 19
 // C. 20
@@ -71,6 +72,8 @@ var x = 10 * 2 + 5 / 5 - 3;
 
 // 2. What is the value of y after the following expression is evaluated?
 var y = 5 + 2 * 3 % 2 - 1;
+console.log(y); 
+
 // A. 5
 // B. 6
 // C. 1
@@ -78,13 +81,24 @@ var y = 5 + 2 * 3 % 2 - 1;
 // Answer: C. 1
 
 // 3. What is the value of z after the following expression is evaluated?
-var a = 10;
-var z = a++ * 2 - a-- * 3;  //11*2-9*3
+var a = 10; // a is assigned the value 10
+var z = a++ * 2 - a-- * 3;  
+/* 
+The expression a++ returns the value of a (which is currently 10), 
+and then increments the value of a by 1. So a now becomes 11.
+Next, the expression a-- returns the value of a (which is currently 11),
+and then decrements the value of a by 1. So a now becomes 10 again.
+
+So the value of z is:
+10 * 2 - 11 * 3 = 20 - 33 = -13 
+*/
+console.log(z); //10*2-11*3=-13
+
 // A. -10
 // B. -5
 // C. 0
 // D. 5
-// Answer: A. -10
+// Answer: A. -13
 
 // 4. What is the value of w after the following expression is evaluated?
 var w = 10 > 5 && 5 < 3 || 2 + 2 === 5;

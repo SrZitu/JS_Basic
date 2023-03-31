@@ -78,12 +78,13 @@ for (let i = 0; i < 8; i++) {
 
 
 // Finding matches in two arrays
-// Another use of nested for loops is in finding matching elements in two arrays.For example, given two arrays of numbers, you could use the following nested for loop to find pairs of numbers that add up to a specific target value:
+// Another use of nested for loops is in finding matching elements in two arrays.
+//For example, given two arrays of numbers, you could use the following nested for loop to find pairs of numbers that add up to a specific target value:
 
 
 const arr1 = [1, 2, 3, 4];
 const arr2 = [5, 6, 7, 8];
-const target = 10;
+const target = 7;
 
 for (let i = 0; i < arr1.length; i++) {
     for (let j = 0; j < arr2.length; j++) {

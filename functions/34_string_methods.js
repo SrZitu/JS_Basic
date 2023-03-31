@@ -20,7 +20,8 @@
 
 //trim() : Removes whitespace from both ends of a string.
 
-//split(separator, limit) : Splits a string into an array of substrings based on a specified separator.The limit parameter specifies the maximum number of splits to make.
+//split(separator, limit) : Splits a string into an array of substrings based on a specified separator.
+//The limit parameter specifies the maximum number of splits to make.
 
 //length : Returns the length of a string.
 

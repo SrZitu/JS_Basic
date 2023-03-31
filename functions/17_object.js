@@ -1,4 +1,5 @@
-// In JavaScript, an object is a data structure that allows you to store collections of data, called properties and methods.An object can represent a real - world entity, such as a person, car, or book, or it can be an abstract concept, such as a color or a shape.
+// In JavaScript, an object is a data structure that allows you to store collections of data, called properties and methods.
+//An object can represent a real - world entity, such as a person, car, or book, or it can be an abstract concept, such as a color or a shape.
 
 // You can create an object in JavaScript using two main syntaxes: object literal notation and constructor notation.
 
@@ -33,25 +34,28 @@
 //A constructor function is a special function that is used to create and initialize an object.Here's an example:
 
 
-// function Person(firstName, lastName, age) {
-//     this.firstName = firstName;
-//     this.lastName = lastName;
-//     this.age = age;
-//     this.sayHello = function () {
-//         console.log('Hello!');
-//     };
-// }
+function Person(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.sayHello = function () {
+        console.log('Hello!');
+    };
+}
 
-// let person = new Person('John', 'Doe', 30);
-
+let person = new Person('John', 'Doe', 30);
+console.log(person.age);
+person.sayHello();
 
 // In this example, we've defined a constructor function called Person that takes three arguments: firstName, lastName, and age. 
 //The function initializes the object using the this keyword, which refers to the object being created. 
 //We've also defined a sayHello method using the same syntax.
 
-// To create a new object using the constructor function, we use the new keyword followed by the name of the constructor function and its arguments.In this case, we've created a new object called person.
+// To create a new object using the constructor function, we use the new keyword followed 
+//by the name of the constructor function and its arguments.In this case, we've created a new object called person.
 
-// You can access the properties and methods of an object created using constructor notation in the same way as an object created using object literal notation.
+// You can access the properties and methods of an object created using constructor notation 
+//in the same way as an object created using object literal notation.
 
 
 
@@ -80,7 +84,8 @@
 
 
 
-// Object.keys(): This method returns an array of a given object's own property keys. It takes one argument, which is the object whose keys you want to retrieve.
+// Object.keys(): This method returns an array of a given object's own property keys. 
+//It takes one argument, which is the object whose keys you want to retrieve.
 
 // const myObj = {
 //     name: 'John',
@@ -93,7 +98,8 @@
 // console.log(keys); // Output: ["name", "age", "city"]
 
 
-// Object.values(): This method returns an array of a given object's own property values. It takes one argument, which is the object whose values you want to retrieve.
+// Object.values(): This method returns an array of a given object's own property values. 
+//It takes one argument, which is the object whose values you want to retrieve.
 
 // const myObj = {
 //     name: 'John',
@@ -106,7 +112,8 @@
 // console.log(values); // Output: ["John", 30, "New York"]
 
 
-// Object.entries(): This method returns an array of a given object's own enumerable property key-value pairs. It takes one argument, which is the object whose entries you want to retrieve.
+// Object.entries(): This method returns an array of a given object's own enumerable property key-value pairs. 
+//It takes one argument, which is the object whose entries you want to retrieve.
 
 // const myObj = {
 //     name: 'John',
@@ -192,7 +199,7 @@
 //     Example:
 
 
-console.log(Object.is('foo', 'foo')); // Output: true
-console.log(Object.is('foo', 'bar')); // Output: false
-console.log(Object.is(null, null)); // Output: true
-console.log(Object.is(0, -0)); // Output: false
+// console.log(Object.is('foo', 'foo')); // Output: true
+// console.log(Object.is('foo', 'bar')); // Output: false
+// console.log(Object.is(null, null)); // Output: true
+// console.log(Object.is(0, -0)); // Output: false

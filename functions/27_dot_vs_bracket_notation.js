@@ -19,4 +19,6 @@
 // const propertyName = "name";
 // console.log(person[propertyName]); // Output: John
 
-// Both dot notation and bracket notation can be used to access or modify object properties, but dot notation is generally preferred when the property name is known in advance, and bracket notation is preferred when the property name is dynamic or unknown.
+// Both dot notation and bracket notation can be used to access or modify object properties, 
+//but dot notation is generally preferred when the property name is known in advance, 
+//and bracket notation is preferred when the property name is dynamic or unknown.

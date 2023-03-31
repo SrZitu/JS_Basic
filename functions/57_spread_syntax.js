@@ -12,19 +12,19 @@
 
 // Pass arguments to a function
 
-// function sum(a, b, c) {
-//     return a + b + c;
-// }
-// const numbers = [1, 2, 3];
-// console.log(sum(...numbers)); // Output: 6
+function sum(a, b, c) {
+    return a + b + c;
+}
+const numbers = [1, 2, 3];
+console.log(sum(...numbers)); // Output: 6
 
 // In this example, we use spread syntax to pass an array of numbers as individual arguments to the sum function.
 
 // Copy an array
 
-// const originalArray = [1, 2, 3];
-// const copiedArray = [...originalArray];
-// console.log(copiedArray); // Output: [1, 2, 3]
+const originalArray = [1, 2, 3];
+const copiedArray = [...originalArray];
+console.log(copiedArray); // Output: [1, 2, 3]
 // In this example, we use spread syntax to create a copy of an existing array(originalArray).
 
 // Combine objects
@@ -41,10 +41,10 @@
 
 // Merge objects
 
-// const obj1 = { a: 1, b: 2 };
-// const obj2 = { b: 3, c: 4 };
-// const mergedObject = { ...obj1, ...obj2 };
-// console.log(mergedObject); // Output: { a: 1, b: 3, c: 4 }
+const obj1 = { a: 1, b: 2 };
+const obj2 = { b: 3, c: 4 };
+const mergedObject = { ...obj1, ...obj2 };
+console.log(mergedObject); // Output: { a: 1, b: 3, c: 4 }
 
 // In this example, we use spread syntax to merge two objects(obj1 and obj2) into a new object called mergedObject.When there are duplicate keys, the value of the last key in the spread list will override previous values.
 
@@ -58,11 +58,12 @@
 
 // Clone an object
 
-// const originalObject = { a: 1, b: 2 };
-// const clonedObject = { ...originalObject };
-// console.log(clonedObject); // Output: { a: 1, b: 2 }
-
-// In this example, we use spread syntax to create a clone of an existing object(originalObject).The new object(clonedObject) has the same key - value pairs as the original object, but is a separate object in memory.
+const originalObject = { a: 1, b: 2 };
+const clonedObject = { ...originalObject };
+console.log(clonedObject); // Output: { a: 1, b: 2 }
+//no mutable way te data change kortesi.react a onk kaje lagbe
+// In this example, we use spread syntax to create a clone of an existing object(originalObject).
+//The new object(clonedObject) has the same key - value pairs as the original object, but is a separate object in memory.
 
 // Spread elements into a function call
 
@@ -84,11 +85,11 @@
 
 // Accept any number of arguments
 
-// function sum(...numbers) {
-//     return numbers.reduce((acc, val) => acc + val, 0);
-// }
+function sum(...numbers) {
+    return numbers.reduce((acc, val) => acc + val, 0);
+}
 // console.log(sum(1, 2, 3)); // Output: 6
-// console.log(sum(1, 2, 3, 4, 5)); // Output: 15
+console.log(sum(1, 2, 3, 4, 5)); // Output: 15
 
 // In this example, we use the rest parameter to accept any number of arguments passed to the sum function. The numbers parameter will be an array containing all of the arguments.
 

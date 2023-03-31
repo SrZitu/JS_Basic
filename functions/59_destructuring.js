@@ -11,8 +11,9 @@
 // Destructuring can also be used with objects.Here's an example of destructuring an object in JavaScript:
 
 
-// const myObject = { name: "John", age: 30 };
-// const { name, age } = myObject;
+const myObject = { name: "John", age: 30 };
+const { name, age } = myObject;
+console.log(name,age);
 
 // In this example, we define an object myObject with two properties: name and age.We then use destructuring to assign the values of name and age to variables with the same name in a single statement.The resulting values of name and age are "John" and 30 respectively.
 
