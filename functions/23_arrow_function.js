@@ -26,3 +26,48 @@ const getRandomNumber = () => Math.floor(Math.random() * 10) + 1;
 
 console.log(getRandomNumber()); // logs a random number between 1 and 10
 // I hope this gives you a basic understanding of arrow functions in JavaScript! Let me know if you have any further questions.
+
+const obj = {
+    count: 10,
+    doSomethingLater() {
+      // The method syntax binds "this" to the "obj" context.
+      setTimeout(() => {
+        // Since the arrow function doesn't have its own binding and
+        // setTimeout (as a function call) doesn't create a binding
+        // itself, the "obj" context of the outer method is used.
+        this.count++;
+        console.log(this.count);
+      }, 300);
+    },
+  };
+  
+  obj.doSomethingLater(); // logs 11
+  
+
+  function Person() {
+    this.name = 'Jack',
+    this.age = 25,
+    this.sayName = function () {
+
+        console.log(this.age);
+        let innerFunc = () => {
+            console.log(this.age);
+        }
+
+        innerFunc();
+    }
+}
+
+const x = new Person();
+x.sayName();
+
+const books = [
+    { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', price: 12.99 },
+    { title: 'To Kill a Mockingbird', author: 'Harper Lee', price: 9.99 },
+    { title: '1984', author: 'George Orwell', price: 10.99 },
+    { title: 'Pride and Prejudice', author: 'Jane Austen', price: 7.99 }
+  ];
+  
+  const bookTitles = books.map(book => book.title);
+  
+  console.table(bookTitles);

@@ -91,6 +91,7 @@ The split() method does not change the original string.
 
 If (" ") is used as separator, the string is split between words.
 
+<hr>
 
 ## join()
 
@@ -100,5 +101,209 @@ The join() method does not change the original array.
 
 Any separator can be specified. The default is comma (,).
 
+
+<hr>
+
 **In summary, var has a function scope, let and const have a block scope, let variables can be reassigned but not re-declared, const variables cannot be reassigned or re-declared, but their properties can be modified if they are objects or arrays.**
 
+<hr>
+
+#  Arrow functions
+
+
+
+Arrow functions don't have their own bindings to **this**, **arguments**, or **super**, and should not be used as methods.
+
+Arrow functions cannot be used as **constructors**. Calling them with new throws a TypeError. They also don't have access to the **new.target** keyword.
+
+Arrow functions cannot use **yield** within their body and cannot be created as generator functions.
+
+# Example:
+
+```Javascript
+// An empty arrow function returns undefined
+const empty = () => {};
+
+(() => "foobar")();
+// Returns "foobar"
+// (this is an Immediately Invoked Function Expression)
+
+const simple = (a) => (a > 15 ? 15 : a);
+simple(16); // 15
+simple(10); // 10
+```
+<hr>
+
+### No binding of arguments example of arrow function
+
+```Javascript
+function regularFunction() {
+  console.log(arguments);
+}
+
+regularFunction(1, 2, 3, 4, 5); // Output: [1, 2, 3, 4, 5]
+
+
+const arrowFunction = () => {
+  console.log(arguments);
+};
+
+arrowFunction(1, 2, 3, 4, 5); // Output: ReferenceError: arguments is not defined
+```
+<hr>
+
+### Cannot be used as constructors
+```Javascript
+
+const Foo = () => {};
+const foo = new Foo(); // TypeError: Foo is not a constructor
+console.log("prototype" in Foo); // false
+```
+<hr>
+
+### Array reduce() with arrow function:
+```javascript
+const expenses = [
+  { description: "Rent", amount: 1000 },
+  { description: "Groceries", amount: 200 },
+  { description: "Transportation", amount: 100 },
+  { description: "Utilities", amount: 300 }
+];
+
+const totalAmount = expenses.reduce((accumulator, expense) => accumulator + expense.amount, 0);
+
+console.log(totalAmount); // Output: 1600
+```
+<hr>
+
+### Fiding max number using reduce
+```javascript
+const numbers = [10, 5, 8, 20, 3, 15];
+
+const maxNumber = numbers.reduce((max, current) => (current > max ? current : max), numbers[0]);
+
+console.log(maxNumber); // Output: 20
+```
+<hr>
+
+### Filtering
+
+```javascript
+
+const numbers = [10, 5, 8, 20, 3, 15];
+const threshold = 10;
+
+const filteredNumbers = numbers.filter(number => number > threshold);
+
+console.log(filteredNumbers); // Output: [20, 15]
+```
+<hr>
+
+### Map Method
+
+```javascript
+
+const fruits = [
+  'Apple',
+  'Banana',
+  'Orange',
+  'Mango'
+];
+
+console.log(fruits.map(fruit => fruit)); 
+// Output: ['Apple', 'Banana', 'Orange', 'Mango']
+
+console.log(fruits.map(fruit => fruit.length)); 
+// Output: [5, 6, 6, 5]
+```
+
+```javascript
+const books = [
+    { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', price: 12.99 },
+    { title: 'To Kill a Mockingbird', author: 'Harper Lee', price: 9.99 },
+    { title: '1984', author: 'George Orwell', price: 10.99 },
+    { title: 'Pride and Prejudice', author: 'Jane Austen', price: 7.99 }
+  ];
+  
+  const bookTitles = books.map(book => book.title);
+  
+  console.table(bookTitles);
+```
+### Output:
+![Image Description](map_example.png)
+
+
+###  More concise promise chains
+```javascript
+promise
+  .then((a) => {
+    // …
+  })
+  .then((b) => {
+    // …
+  });
+
+```
+
+
+### In this example, both the getFullName and greet methods are defined as arrow functions. Arrow functions do not have their own this binding, so they lexically capture the person object from their surrounding scope..
+
+```Javascript
+const person = {
+  firstName: 'John',
+  lastName: 'Doe',
+  getFullName: () => {
+    return `${person.firstName} ${person.lastName}`;
+  },
+  greet: (message) => {
+    return `${message}, ${person.getFullName()}!`;
+  }
+};
+
+const employee = {
+  firstName: 'Jane',
+  lastName: 'Smith'
+};
+
+const greeting1 = person.greet.call(employee, 'Hello');
+console.log(greeting1); // Output: "Hello, Jane Smith!"
+
+const greeting2 = person.greet.apply(employee, ['Hi']);
+console.log(greeting2); // Output: "Hi, Jane Smith!"
+
+const greetEmployee = person.greet.bind(employee);
+const greeting3 = greetEmployee('Hey');
+console.log(greeting3); // Output: "Hey, Jane Smith!"
+
+```
+<hr>
+
+
+### Using an arrow function in this scenario allows us to avoid issues with losing the context (this) when dealing with asynchronous operations. Arrow functions lexically bind the context from their surrounding scope, ensuring that the this within the arrow function refers to the correct object (car in this case).
+
+```javascript
+const car = {
+  brand: 'Tesla',
+  model: 'Model 3',
+  batteryLevel: 50,
+  checkBatteryLater() {
+    // The method syntax binds "this" to the "car" context.
+
+    // Simulating an asynchronous operation using setTimeout
+    setTimeout(() => {
+      // Since the arrow function doesn't have its own binding and
+      // setTimeout (as a function call) doesn't create a binding
+      // itself, the "car" context of the outer method is used.
+
+      // Perform some logic with the car's context
+      if (this.batteryLevel < 20) {
+        console.log('Battery is low. Please charge the car.');
+      } else {
+        console.log('Battery level is sufficient.');
+      }
+    }, 2000);
+  },
+};
+
+car.checkBatteryLater(); // Output: Battery level is sufficient.
+```
