@@ -134,32 +134,6 @@ simple(10); // 10
 ```
 <hr>
 
-### No binding of arguments example of arrow function
-
-```Javascript
-function regularFunction() {
-  console.log(arguments);
-}
-
-regularFunction(1, 2, 3, 4, 5); // Output: [1, 2, 3, 4, 5]
-
-
-const arrowFunction = () => {
-  console.log(arguments);
-};
-
-arrowFunction(1, 2, 3, 4, 5); // Output: ReferenceError: arguments is not defined
-```
-<hr>
-
-### Cannot be used as constructors
-```Javascript
-
-const Foo = () => {};
-const foo = new Foo(); // TypeError: Foo is not a constructor
-console.log("prototype" in Foo); // false
-```
-<hr>
 
 ### Array reduce() with arrow function:
 ```javascript
@@ -244,42 +218,41 @@ promise
   });
 
 ```
+ <hr>
 
+ ## Limitation of Arrow functions:
 
-### In this example, both the getFullName and greet methods are defined as arrow functions. Arrow functions do not have their own this binding, so they lexically capture the person object from their surrounding scope..
+### 1. No binding of arguments 
 
 ```Javascript
-const person = {
-  firstName: 'John',
-  lastName: 'Doe',
-  getFullName: () => {
-    return `${person.firstName} ${person.lastName}`;
-  },
-  greet: (message) => {
-    return `${message}, ${person.getFullName()}!`;
-  }
+function regularFunction() {
+  console.log(arguments);
+}
+
+regularFunction(1, 2, 3, 4, 5); // Output: [1, 2, 3, 4, 5]
+
+
+const arrowFunction = () => {
+  console.log(arguments);
 };
 
-const employee = {
-  firstName: 'Jane',
-  lastName: 'Smith'
-};
-
-const greeting1 = person.greet.call(employee, 'Hello');
-console.log(greeting1); // Output: "Hello, Jane Smith!"
-
-const greeting2 = person.greet.apply(employee, ['Hi']);
-console.log(greeting2); // Output: "Hi, Jane Smith!"
-
-const greetEmployee = person.greet.bind(employee);
-const greeting3 = greetEmployee('Hey');
-console.log(greeting3); // Output: "Hey, Jane Smith!"
-
+arrowFunction(1, 2, 3, 4, 5); // Output: ReferenceError: arguments is not defined
 ```
 <hr>
 
+###  2. Arrow function Cannot be used as constructors
+```Javascript
 
-### Using an arrow function in this scenario allows us to avoid issues with losing the context (this) when dealing with asynchronous operations. Arrow functions lexically bind the context from their surrounding scope, ensuring that the this within the arrow function refers to the correct object (car in this case).
+const Foo = () => {};
+const foo = new Foo(); // TypeError: Foo is not a constructor
+console.log("prototype" in Foo); // false
+```
+<hr>
+
+##  The arrow function doesn't have its own binding
+
+#### Using an arrow function in this scenario allows us to avoid issues with losing the context (this) when dealing with asynchronous operations. Arrow functions lexically bind the context from their surrounding scope, ensuring that the this within the arrow function refers to the correct object (car in this case).
+<hr>
 
 ```javascript
 const car = {
