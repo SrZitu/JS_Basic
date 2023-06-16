@@ -61,7 +61,7 @@ const person = { fname: "John",lname:"Doe" };
 person.fname = "Jane"; 
 person.age = 32; 
 
-console.log(person); 
+console.table(person)
 
 ```
   **Output**
@@ -69,6 +69,36 @@ console.log(person);
 
 ![Image Description](const._var.png)
 
+As funcitons are not repeted so we store the function into const type varibale.
+
+```javascript
+const revString=function(str){
+    return str.split('').reverse().join('');
+}
+console.log(revString('hello 12'))
+```
+**Output**
+
+![Image Description](cons_split.png)
+
+** In the Above Code **
+## Split()
+The split() method splits a string into an array of substrings.
+
+The split() method returns the new array.
+
+The split() method does not change the original string.
+
+If (" ") is used as separator, the string is split between words.
+
+
+## join()
+
+The join() method returns an array as a string.
+
+The join() method does not change the original array.
+
+Any separator can be specified. The default is comma (,).
 
 **In summary, var has a function scope, let and const have a block scope, let variables can be reassigned but not re-declared, const variables cannot be reassigned or re-declared, but their properties can be modified if they are objects or arrays.**
 

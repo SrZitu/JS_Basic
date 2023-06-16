@@ -26,3 +26,12 @@ person.age = 32;
 
 console.table(person)
 
+const revString=function(str){
+    return str.split('').reverse().join('');
+}
+console.log(revString('hello 12'))
+
+
+
+
+
