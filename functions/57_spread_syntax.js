@@ -22,8 +22,8 @@ console.log(sum(...numbers)); // Output: 6
 
 // Copy an array
 
-const originalArray = [1, 2, 3];
-const copiedArray = [...originalArray];
+const originalArray1 = [1, 2, 3];
+const copiedArray = [...originalArray1];
 console.log(copiedArray); // Output: [1, 2, 3]
 // In this example, we use spread syntax to create a copy of an existing array(originalArray).
 
@@ -115,3 +115,44 @@ console.log(sum(1, 2, 3, 4, 5)); // Output: 15
 // In this example, we use the rest parameter to collect an indefinite number of messages passed to the logMessage function. The prefix parameter is a required parameter, but the rest of the arguments are optional.If no additional arguments are passed, the messages array will be empty.
 
 // The rest parameter is a powerful feature in JavaScript that can simplify your code and make it more flexible.It is commonly used in modern JavaScript frameworks like React and Angular.
+//combining array
+const fruits1 = ['apple', 'banana', 'orange'];
+const fruits2 = ['grape', 'melon'];
+
+const combinedFruits = [...fruits1, ...fruits2];
+console.log(combinedFruits);
+
+//coping array
+const originalArray = [1, 2, 3];
+const newArray = [...originalArray];
+
+console.log(originalArray); // Output: [1, 2, 3]
+console.log(newArray);      // Output: [1, 2, 3]
+
+newArray.push(4);
+
+console.log(originalArray); // Output: [1, 2, 3]
+console.log(newArray);      // Output: [1, 2, 3, 4]
+
+//Merging Objects
+const user = { name: 'John', age: 30 };
+const details = { email: 'john@example.com', city: 'New York' };
+
+const mergedObjects = { ...user, ...details };
+console.table(mergedObjects);
+// Output: { name: 'John', age: 30, email: 'john@example.com', city: 'New York' }
+
+//Function Arguments
+// Function to calculate the total sum of numbers
+function calculateSum(...numbers) {
+    const doubledNumbers = numbers.map(num => num * 2);
+    const sum = doubledNumbers.reduce((acc, curr) => acc + curr, 0);
+    return sum;
+  }
+  
+  // Pass an array of numbers as arguments using the spread operator
+  const numbersArray = [1, 2, 3, 4, 5];
+  const totalSum = calculateSum(...numbersArray);
+  console.log(totalSum);
+  // Output: 30 (1*2 + 2*2 + 3*2 + 4*2 + 5*2 = 30)
+  

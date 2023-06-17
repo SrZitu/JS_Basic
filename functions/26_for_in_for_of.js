@@ -35,3 +35,26 @@ for (const number of numbers) {
 // In this example, the for-of loop is used to iterate over the elements of the numbers array.The loop variable number represents each element of the array.The code block inside the loop logs each element to the console.
 
 // The main difference between for-in and for-of loops is that for-in is used to iterate over the properties of an object, while for-of is used to iterate over the elements of an iterable object.It's important to choose the appropriate loop for the data structure you're working with.
+
+
+/*Difference for..in and for..of:
+Both for..in and for..of are looping constructs which are used to iterate over data structures. The only difference between them is the entities they iterate over:
+
+for..in iterates over all enumerable property keys of an object
+for..of iterates over the values of an iterable object. Examples of iterable objects are arrays, strings, and NodeLists.*/
+let array = ['Sakib', 'Tamim', 'Musfiq','Liton'];
+
+array.addedProp = 'arrProp';
+
+// elKey are the property keys
+for (let Key in array) {
+  console.log(Key);
+}
+let array = ['Sakib', 'Tamim', 'Musfiq','Liton'];
+
+array.addedProp = 'arrProp';
+
+// elKey are the property keys
+for (let Key of array) {
+  console.log(Key);
+}
